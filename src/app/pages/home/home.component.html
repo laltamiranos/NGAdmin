@@ -1,0 +1,32 @@
+<div id="carta-view" class="carta-Normal">
+    <div class="w-100 h-100">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="col-3">
+                    <h1 class="welcome__title--small">Buenos días</h1>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div>
+                    <div class="d-vertical mt-2 mb-3">
+                        <label class="user-picture pointer shadow">
+                            <span class="h-100 d-vertical">{{dataUsuario.usuario.charAt(0) + dataUsuario.usuario.charAt(1)}}</span>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <h6 class="font-weight-lighter mb-0 text-m">{{dataUsuario.usuario}}</h6>
+                        <p class="text-muted text-light">{{dataUsuario.correo}} / {{dataUsuario.sexo}}</p>
+                        <p class="text-muted text-light">{{dataUsuario.fechaCreacion | date}}</p>
+                        <p class="text-muted text-light" *ngIf="dataUsuario.estatus">Habilitado</p>
+                        <p class="text-muted text-light" *ngIf="!dataUsuario.estatus">Deshabilitado</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

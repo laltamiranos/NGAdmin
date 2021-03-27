@@ -1,0 +1,37 @@
+<div class="w-100">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-4">
+            <label class="text-muted m-0 text-pequeno">Correo Electrónico</label>
+            <input type="text" formControlName="correo" class="form-control" placeholder="Correo Electrónico" [ngClass]="submitted && form.controls['correo'].errors ? 'is-invalid' : !submitted && form.controls['correo'].valid ? 'is-valid' : submitted && form.controls['correo'].valid ? 'is-valid' : null"
+            />
+            <div *ngIf="submitted && form.controls['correo'].errors" class="invalid-feedback">
+                <div *ngIf="form.controls['correo'].errors.required">El correo electrónico es requerido.
+                </div>
+                <div *ngIf="form.controls['correo'].errors.pattern">El correo electrónico debe ser una dirección válida.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="text-muted m-0 text-pequeno">Contraseña</label>
+            <input type="password" formControlName="contrasena" placeholder="Contraseña" class="form-control" [ngClass]="submitted && form.controls['contrasena'].errors ? 'is-invalid' : !submitted && form.controls['contrasena'].valid ? 'is-valid' : submitted && form.controls['contrasena'].valid ? 'is-valid' : null"
+            />
+            <div *ngIf="submitted && form.controls['contrasena'].errors" class="invalid-feedback">
+                <div *ngIf="form.controls['contrasena'].errors.required">La contraseña es requerido</div>
+                <div *ngIf="form.controls['contrasena'].errors.minlength">La contraseña debe tener al menos 9 digitos
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group h-100 d-vertical">
+            <button class="btn btn-primary pl-5 pr-5 p-2">
+                <span [hidden]="loading">Acceder</span>
+                <span [hidden]="!loading">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </span>
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,202 @@
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+    /* overflow: auto; */
+    position: fixed;
+    z-index: 99;
+    background-color: #f2f4f8;
+}
+
+.contenedor.dark{
+    background: #33313b;
+}
+
+.sideBar {
+    height: 100vh;
+    width: 14.5vw;
+    position: fixed;
+    background: #212121;
+    /* background-image: linear-gradient(to bottom, #0b0f10, #090d0e, #080b0c, #06080a, #040607, #040709, #04090b, #040a0d, #070f12, #0a1317, #0c161b, #0e191f); */
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.sideBar-chico {
+    height: 100vh;
+    width: 3vw;
+    position: fixed;
+    background: #212121;
+    /* background-image: linear-gradient(to bottom, #0b0f10, #090d0e, #080b0c, #06080a, #040607, #040709, #04090b, #040a0d, #070f12, #0a1317, #0c161b, #0e191f); */
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.sideNav {
+    position: fixed;
+    z-index: 100;
+    min-height: 48px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.sideNav-chico {
+    position: fixed;
+    z-index: 100;
+    min-height: 48px;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.contenidoNormal {
+    background-color: #f4f6f9;
+    height: 100vh;
+    width: calc(100vw - 14.5vw);
+    margin-left: 14.5vw;
+    padding: 1rem;
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.dark{
+    background-color: #212121;
+}
+
+.contenido-chico {
+    background-color: #f4f6f9;
+    height: 100vh;
+    width: calc(100vw - 3vw);
+    margin-left: 3vw;
+    padding: 1rem;
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.side-user {
+    top: 48px;
+    right: 1em;
+    background: #ffffff;
+    color: #33313b;
+    position: absolute;
+    z-index: 100;
+    border-left: 2px solid #eaeaea;
+    width: 14vw;
+    height: auto;
+    padding-bottom: 1em;
+}
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 101;
+    background: rgba(255, 255, 255, 1);
+}
+
+.contenido-outled {
+    width: calc(100vw - 16vw);
+    height: calc(100vh - 79px);
+}
+
+.contenido-outled-chico {
+    width: calc(100vw - 4vw);
+    height: calc(100vh - 79px);
+}
+
+.breadcrumb-v1 {
+    display: flex;
+    margin-top: 3.5em !important;
+}
+
+
+/* CELULAR */
+
+@media only screen and (max-width: 600px) {
+    .sideNav {
+        width: 100vw;
+    }
+    .sideBar {
+        top: -1px;
+        width: 100vw;
+        left: calc(102vw - 53rem);
+        height: 101vh;
+    }
+    .sideBar.toggled {
+        left: 0rem !important;
+    }
+    .side-views {
+        z-index: 99;
+        top: 48px;
+        height: calc(100vh - 48px);
+        width: 100vw !important;
+        border-radius: 0;
+        position: absolute;
+        background: #fff;
+    }
+    .side-user {
+        z-index: 99;
+        height: 19vh;
+        width: 51vw !important;
+        right: 3em;
+        border-radius: 0;
+    }
+    .contenidoNormal {
+        width: 100vw;
+        background-color: white;
+        margin-left: 0 !important;
+    }
+    .contenedor {
+        background-color: white !important;
+    }
+    .contenido-outled {
+        width: calc(100vw - 32px);
+        height: calc(100vh - 89px);
+        margin: 0;
+        margin-top: 4rem !important;
+    }
+}
+
+
+/* LAPTOP */
+
+@media only screen and (min-width: 1280px) {
+    .sideNav {
+        width: calc(100vw - 14.5vw);
+        left: 14.5vw;
+    }
+    .sideNav-chico {
+        width: calc(100vw - 3vw);
+        left: 3vw;
+    }
+}
+
+
+/* MONITOR */
+
+@media only screen and (min-width: 1920px) {
+    .sideNav {
+        width: calc(100vw - 14.5vw);
+        left: 14.5vw;
+    }
+}

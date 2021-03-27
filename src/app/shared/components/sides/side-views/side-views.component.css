@@ -1,0 +1,19 @@
+.sizeViews {
+    height: calc(100vh - 10em);
+}
+
+.close-item {
+    font-size: 1.5em;
+    color: #f0134d;
+}
+
+.navigate-item {
+    font-size: 1.5em;
+    color: #42b883;
+}
+
+.closeModal-Views {
+    color: #fc7978;
+    font-size: 1.5em;
+    margin-top: 1em;
+}

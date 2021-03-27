@@ -1,0 +1,88 @@
+.nav-balcax {
+    background: #fff;
+    background-size: 100%;
+    min-height: 48px;
+    max-height: 48px;
+    background-repeat: no-repeat;
+}
+
+
+/* .box {
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tipoMenu span {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    height: .2em;
+    background: #03acc6;
+    transition: all .3s;
+    position: relative;
+} */
+
+.height-nav {
+    min-height: 48px;
+    max-height: 48px;
+}
+
+.active-nav-item {
+    background-color: white;
+    transition: all .5s;
+}
+
+.expand {
+    cursor: pointer;
+    -webkit-transition: width .5s;
+    transition: width .5s;
+}
+
+.expand:hover {
+    width: 1.5vw !important;
+}
+
+.user-picture {
+    border-radius: 50%;
+    margin-top: .4rem;
+    height: 32px;
+    width: 32px;
+    background-color: #90a4ae;
+    color: #eaeaea;
+    font-size: .8em;
+}
+
+.viewTabs {
+    display: none;
+}
+
+.viewSwichMenu {
+    display: none;
+}
+
+
+/* CELULAR */
+
+@media only screen and (max-width: 600px) {
+    .viewTabs {
+        display: initial;
+        color: #6c757d!important;
+        font-size: 1.5rem;
+    }
+    .viewSwichMenu {
+        display: initial;
+    }
+    .nav-balcax {
+        background: #ffffff;
+        box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .15)!important;
+    }
+    .user-picture {
+        color: #f8f9fa;
+    }
+     :host>>>.ui-inputswitch {
+        margin-top: 1em;
+    }
+}

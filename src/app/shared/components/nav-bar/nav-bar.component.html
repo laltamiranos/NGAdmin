@@ -1,0 +1,28 @@
+<div class="w-100 h-100 nav-balcax">
+    <div class="row height-nav">
+
+        <div class="col-3 col-md-1 h-100 d-vertical">
+            <div class="viewSwichMenu" style="margin-top: .5em;">
+                <i class="fas fa-bars fa-2x" (click)="changeSideVisible()"></i>
+                <!-- <p-inputSwitch [(ngModel)]=" visibleSwich " (onChange)="handleChange($event.checked) " hidden></p-inputSwitch> -->
+            </div>
+        </div>
+
+        <div class="col-1 m-0 p-0 viewTabs ">
+            <div class="h-100 d-vertical ">
+                <i class="fas fa-table " (click)="changeSideViews() "></i>
+            </div>
+        </div>
+
+        <div class="col-3 col-md-10 "></div>
+
+        <div class="col-5 col-md-1 group-side-user " *ngIf="user " (click)="changeSideUser() ">
+            <div [ngClass]="mostrarSideUser ? 'active-nav-item' : null " class="pointer w-100 h-100 d-vertical ">
+                <label class="user-picture pointer ">
+                    <span class="h-100 d-vertical ">{{user.usuario.charAt(0) + user.usuario.charAt(1)}}</span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+</div>

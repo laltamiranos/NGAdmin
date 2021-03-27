@@ -1,0 +1,70 @@
+<div class="w-100" *ngIf="tabsInBreadcrumb.length > 0">
+
+    <div [ngSwitch]="cantidadRows">
+
+        <div *ngSwitchCase="1">
+            <label class="text-muted-title">{{pagina}}</label>
+            <hr>
+        </div>
+
+        <div *ngSwitchDefault>
+            <div class="row">
+
+                <div class="col-11">
+                    <div *ngFor="let tab of tabsInBreadcrumb" class="d-inline text-muted tab" [routerLink]="[tab.routerLink]" routerLinkActive="active">
+                        <i class="mr-3"></i> <span class="mr-1 text-truncate">{{tab.label}}</span> <i class="fas fa-times close" (click)="closeTab(tab)"></i>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="row">
+
+                        <div class="col-4"></div>
+                        <div class="col-8">
+                            <button class="btn btn-sm text-center" [ngClass]="tabsOutBreadcrumb.length > 0 ? 'btn-info' : 'btn-secondary'" [disabled]="tabsOutBreadcrumb.length > 0 ? false : true" (click)="openModal()" style="margin-top: -1em;">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="modalTabsOut">
+    <div class="side-TabsOut shadow-Modales" (click)="clickSides($event)" [@fadeAnimation]="modalTabsOut">
+
+        <div class="w-100 h-100 scroll">
+            <div class="row" *ngIf="tabsOutBreadcrumb.length > 0">
+                <div class="col-12" *ngFor="let item of tabsOutBreadcrumb">
+                    <div class="row pb-2">
+                        <div class="col-10">
+                            <span class="text-muted text-truncate pointer" [routerLink]="[item.routerLink]">{{item.label}}</span>
+                        </div>
+                        <div class="col-2">
+                            <i class="fas fa-times closeTabsOut" (click)="closeTab(item)"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-100 d-vertical" *ngIf="tabsOutBreadcrumb.length == 0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h-100 d-vertical">
+                            <i class="fab fa-dropbox vacio"></i>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="text-muted text-center w-100">Sin Tabs</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

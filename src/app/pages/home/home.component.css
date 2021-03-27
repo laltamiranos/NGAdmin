@@ -1,0 +1,41 @@
+.text-muted-title {
+    color: rgb(3, 173, 199) !important;
+}
+
+.welcome__title--small {
+    font-size: 24px;
+    font-weight: inherit;
+}
+
+.user-picture {
+    border-radius: 50%;
+    margin-top: 0;
+    height: 7em;
+    width: 7em;
+    background-color: #90a4ae;
+    color: #eaeaea;
+}
+
+label {
+    font-size: .9em;
+}
+
+.tab.active {
+    color: #1d1919 !important;
+    font-weight: bolder!important;
+    border-bottom: .1em solid #03adc7;
+    margin-bottom: -1rem;
+}
+
+:host>>>.ui-inputswitch {
+    margin-top: .5em;
+}
+
+.text-m {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 1.3em;
+}

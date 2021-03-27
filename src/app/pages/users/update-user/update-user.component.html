@@ -1,0 +1,90 @@
+<div class="row h-100">
+    <div class="col-12" *ngIf="user">
+        <h4>Actualizar Usuario</h4>
+        <hr>
+        <label class="text-muted">Usuario: <span class="text-danger">{{user.correo}}</span>.</label>
+
+        <hr>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="text-muted m-0 text-pequeno">Correo Electrónico</label>
+                        <input type="email" formControlName="correo" class="form-control" placeholder="Correo Electrónico" [ngClass]="submitted && form.controls['correo'].errors ? 'is-invalid' : !submitted && form.controls['correo'].valid ?
+                                        'is-valid' : submitted && form.controls['correo'].valid ? 'is-valid' : null " />
+                        <div *ngIf="submitted && form.controls['correo'].errors " class="invalid-feedback ">
+                            <div *ngIf="form.controls['correo'].errors.required ">El correo electrónico es requerido.
+                            </div>
+                            <div *ngIf="form.controls['correo'].errors.pattern">El correo electrónico debe ser una dirección válida.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label class="text-muted m-0 text-pequeno">Usuario</label>
+                        <input type="text" formControlName="usuario" class="form-control" placeholder="Usuario" [ngClass]="submitted && form.controls['usuario'].errors ? 'is-invalid' : !submitted && form.controls['usuario'].valid ? 'is-valid' : submitted && form.controls['usuario'].valid ? 'is-valid' : null"
+                        />
+                        <div *ngIf="submitted && form.controls['usuario'].errors" class="invalid-feedback">
+                            <div *ngIf="form.controls['usuario'].errors.required">El usuario es requerido</div>
+                            <div *ngIf="form.controls['usuario'].errors.minlength">El usuario debe tener al menos 7 caracteres
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label class="text-muted m-0 text-pequeno">Sexo</label>
+                        <p-dropdown formControlName="sexo" [options]="listSexos" placeholder="Selecciona el sexo" optionLabel="name" [ngClass]="submitted && form.controls['sexo'].errors ? 'is-invalid' : 
+                        !submitted && form.controls['sexo'].valid ? 'is-valid' : submitted && form.controls['sexo'].valid ? 'is-valid' : null" [style]="{'width':'100%'}"></p-dropdown>
+                        <div *ngIf="submitted && form.controls['sexo'].errors" class="invalid-feedback">
+                            <div *ngIf="form.controls['sexo'].errors.required" style="font-size: small;">Debe seleccionar el sexo.(requerido)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="text-muted m-0 text-pequeno">Contraseña</label>
+                        <input type="password" formControlName="contrasena" class="form-control" placeholder="Contraseña" [ngClass]="submitted && form.controls['contrasena'].errors ? 'is-invalid' : !submitted && form.controls['contrasena'].valid ? 'is-valid' : submitted && form.controls['contrasena'].valid ? 'is-valid' : null"
+                        />
+                        <div *ngIf="submitted && form.controls['contrasena'].errors" class="invalid-feedback">
+                            <div *ngIf="form.controls['contrasena'].errors.required">La contraseña es requerida</div>
+                            <div *ngIf="form.controls['contrasena'].errors.minlength">La contraseña debe tener al menos 10 caracteres</div>
+                            <div *ngIf="form.controls['contrasena'].errors.pattern">La contraseña debe contener 1 Mayuscula, 1 Minuscula, 1 Simbolo, 1 Número.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="text-muted m-0 text-pequeno">Repetir Contraseña</label>
+                        <input type="password" formControlName="rcontrasena" class="form-control" placeholder="Repite la Contraseña" [ngClass]="submitted && form.controls['contrasena'].errors ? 'is-invalid' : !submitted && form.controls['rcontrasena'].valid ? 'is-valid' : submitted && form.controls['rcontrasena'].valid ? 'is-valid' : null"
+                        />
+                        <div *ngIf="submitted && form.controls['rcontrasena'].errors" class="invalid-feedback">
+                            <div *ngIf="form.controls['rcontrasena'].errors.required">Debes confirmar la contraseña.</div>
+                        </div>
+                        <div *ngIf="isequals == false" class="text-danger">Las contraseñas no coinciden</div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-6 h-100 d-vertical">
+                    <button type="reset" class="btn btn-danger w-100">Vaciar</button>
+                </div>
+                <div class="col-6 h-100 d-vertical">
+                    <button class="btn btn-success w-100">Actualizar</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiPMSAdmin: "http://localhost:51492/",
 };

@@ -1,0 +1,27 @@
+<div class="w-100 h-100">
+
+    <div class="div-user">
+        <div class="row h-100">
+            <div class="col-8 h-100 d-vertical-left pl-4" *ngIf="!menuChico">
+                <h1 class="text-left title-nav">PMS Admin</h1>
+            </div>
+            <div [ngClass]="menuChico ? 'col-12' : 'col-3'" class="h-100 d-vertical">
+                <div class="box">
+                    <div id="tipoMenu" class="btn not-active" (click)="changeMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100 h-100 div-menu">
+        <div class="content">
+            <p-panelMenu [model]="items" [multiple]="false" *ngIf="!menuChico"></p-panelMenu>
+            <p-tieredMenu [model]="itemsMenuChico" *ngIf="menuChico"></p-tieredMenu>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="pagina-completa">
+
+    <p-toast [style]="{marginTop: '10px'}" position="top-right" key="toast"></p-toast>
+
+    <!-- <div style="background-color: rgb(83, 94, 99);" class="back"></div> -->
+
+    <img src="assets/empresa-tech.gif" class="back"/>
+
+    <div class="carta-completa shadow">
+        <div class="row w-100 h-100">
+            
+                <div class="cintilla">
+                    <div class="h-100 d-vertical">
+                        <!-- <img src="assets/logo-bx.png" class="logo" /> -->
+                    </div>
+                </div>
+            
+                <div class="h-94 d-vertical-left">
+                    <div class="central-div">
+    
+                        <h1 class="title">Iniciar Sesión</h1>
+                        <div class="row">
+                            <div class="col-3">
+                                <hr class="mt-0">
+                            </div>
+                        </div>
+            
+                        <div class="frm">
+                            <app-flogin (dataUser)="getDataLogin($event)"></app-flogin>
+                        </div>
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,176 @@
+/* * {
+    overflow: hidden;
+} */
+
+.pagina-completa {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.carta-completa{
+    margin-top: 4em;
+    margin-left: 27em;
+    margin-right: 5em;
+    margin-bottom: 3em;
+    width: 35vw;
+    height: 77vh;
+    border-radius: 2em !important;
+    background-color: #F2F2F2;
+    opacity:0.8; /* Opacidad 60% */
+}
+
+.frm{
+    width: 28em;
+}
+
+
+.back {
+    background-repeat: no-repeat;
+    top: -3rem;
+    left: -8em;
+    position: fixed;
+    width: 117%;
+    height: 114%;
+    z-index: -1;
+}
+
+.central-div {
+    margin: 0;
+    padding: 2em;
+}
+
+.title {
+    margin-top: 2em;
+    font-size: 2em;
+    font-weight: lighter;
+    color: #212121;
+}
+
+.cintilla {
+    left: 29em;
+    position: absolute;
+    width: 12em;
+    height: 10em;
+    /* background-color: #f16a77; */
+}
+
+.logo {
+    width: 12em;
+}
+
+.logo-p {
+    width: 3em;
+}
+
+hr {
+    border-top: 1px solid #398bf7;
+}
+
+.footer {
+    width: 100vw;
+    height: calc(100vh - 37.2em);
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+
+/* CELULAR */
+
+@media only screen and (max-width: 640px) {
+    .pagina-completa {
+        background-size: 183% 117%;
+        background-position-x: -9em;
+    }
+    .carta-completa{
+        margin-top: 5em;
+        margin-left: 1.6em;
+        margin-right: 1.6em;
+        margin-bottom: 5em;
+        width: 85vw;
+        height: 64vh;
+    }
+    .frm{
+        width: 17em;
+    }
+    .back {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 150vw;
+        height: 100vh;
+    }
+    .cintilla {
+        left: 2em;
+        top: 3.5em;
+    }
+    .central-div {
+        height: 59vh;
+        width: 100vw;
+        margin-bottom: 0em;
+    }
+    .logo {
+        width: 33vw;
+    }
+    .title {
+        font-size: 1.5rem;
+        margin-top: 2.5em;
+    }
+    .w-75 {
+        width: 100%!important;
+        margin-bottom: 3em;
+    }
+    .footer {
+        height: auto;
+    }
+}
+
+
+/* LAPTOP */
+
+@media only screen and (min-width: 1280px) {
+    .central-div {
+        height: 58vh;
+        width: 51vw;
+    }
+}
+
+
+/* MONITOR */
+
+@media only screen and (min-width: 1920px) {
+    .central-div {
+        width: 42vw;
+        height: 46vh;
+        margin-top: 5em;
+    }
+    .menu-login {
+        width: calc(100vw - 74em);
+    }
+    .footer {
+        height: calc(100vh - 56.2em);
+    }
+
+    .carta-completa{
+        margin-top: 10em;
+        margin-left: 40em;
+        margin-right: 40em;
+        margin-bottom: 10em;
+        width: 30vw;
+        height: 64vh;
+    }
+    .frm{
+        width: 34em;
+    }
+    .cintilla {
+        left: 44em;
+        top: 11em;
+    }
+    .logo {
+        width: 15vw;
+    }
+}

@@ -1,0 +1,57 @@
+.tab {
+    transition: 0.2s ease-in;
+    background-color: #ffffff;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: .5rem;
+    margin-right: .5rem;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    background-size: 48em 13em;
+    background-repeat: no-repeat;
+    color: #03adc7 !important;
+    border: 1px solid #cecece7a;
+}
+
+.tab>i.close {
+    font-size: .8rem;
+    margin-left: .7rem;
+    position: absolute;
+    color: #f16a77;
+}
+
+.active {
+    background: #398bf7;
+    color: white!important;
+}
+
+.tab.active>i.close {
+    font-size: .8rem;
+    margin-left: .7rem;
+    position: absolute;
+    color: white;
+}
+
+.side-TabsOut {
+    width: 22vw;
+    height: 39vh;
+    top: 58px;
+    right: 1em;
+    position: absolute;
+    background: white;
+    padding: 1em;
+    z-index: 15;
+    border: 1px solid #dee2e6;
+    box-shadow: 0em .5em 1em 0em rgba(0, 0, 0, .15)!important;
+    overflow-y: scroll;
+}
+
+.closeTabsOut {
+    color: #fc7978;
+    font-size: 1em;
+}
+
+.vacio {
+    font-size: 7em;
+    color: #f8f9fa;
+}

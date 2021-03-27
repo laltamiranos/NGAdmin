@@ -1,0 +1,23 @@
+:host>>>.ui-sidebar-right {
+    width: 45vw !important;
+}
+
+.srn-btn {
+    position: absolute;
+    top: 0 !important;
+    right: 10px !important;
+}
+
+.closeModal-Usuarios {
+    float: right;
+    color: #fc7978;
+    font-size: 1.5em;
+}
+
+/* CELULAR */
+
+@media only screen and (max-width: 640px) {
+    :host>>>.ui-sidebar-right {
+        width: 100vw !important;
+    }
+}

@@ -1,0 +1,396 @@
+.div-user {
+    background: #fff;
+    width: 100%;
+    height: 48px;
+}
+
+.title-nav {
+    color: #03adc7;
+    font-weight: lighter;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.icono {
+    font-size: 1.5rem;
+    padding-right: 15px;
+}
+
+.div-menu {
+    position: relative;
+}
+
+.div-menu .content {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+
+
+/* .div-menu::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-image: url('/assets/sidenav.jpg');
+    background-size: cover;
+    opacity: .05;
+} */
+
+
+/* TIRED MENU */
+
+:host>>>.ui-tieredmenu {
+    width: 3vw;
+    height: calc(100vh - 48px);
+    background: transparent;
+    border: 0px;
+}
+
+@media only screen and (max-width: 640px) {
+     :host>>>.ui-tieredmenu {
+        width: 3vw;
+    }
+}
+
+:host>>>.ui-tieredmenu .ui-menuitem {
+    background: transparent !important;
+}
+
+:host>>>.ui-tieredmenu .ui-submenu-list {
+    background-color: #0b0d0e !important;
+    border: 0px !important;
+}
+
+:host>>>.ui-menuitem-link .ui-submenu-icon {
+    color: #838790 !important;
+}
+
+ :host>>>.ui-tieredmenu .ui-menuitem-icon {
+    color: #838790 !important;
+}
+
+:host>>>.ui-tieredmenu .ui-menuitem-text {
+    font-size: .7rem !important;
+    color: #838790 !important;
+}
+
+
+/* hover al pasar por hijo */
+
+:host>>>.ui-tieredmenu .ui-menuitem-link:hover {
+    background-color: transparent !important;
+}
+
+:host>>>.ui-tieredmenu .ui-menuitem-link:hover>span {
+    color: white !important;
+}
+
+
+/* Seoarador */
+
+:host>>>.ui-tieredmenu .ui-menu-separator {
+    border: 0px;
+}
+
+
+/* linea y texto de item seleccionado */
+
+:host>>>.ui-menuitem-active>.ui-menuitem-link {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: .3em solid #03adc7;
+    background-color: #151719 !important;
+    color: white !important;
+}
+
+:host>>>.ui-menuitem.ui-menuitem-active>a>span {
+    color: #ffffff !important;
+}
+
+
+/* FIN TIRED MENU */
+
+
+/* PANEL MENU */
+
+ :host>>>.ui-panelmenu {
+    width: 101%;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header>a {
+    border: 0px solid transparent;
+    background-color: transparent;
+    padding: 0.714em 0.857em;
+    font-weight: 700;
+    position: static;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+ :host>>>.ui-menuitem-text {
+    font-size: .8rem !important;
+    color: #838790!important;
+}
+
+ :host>>>.ui-panelmenu-icon {
+    color: #838790!important;
+    float: right;
+}
+
+ :host>>>.ui-menuitem-icon {
+    color: #838790!important;
+    margin-right: 1rem;
+}
+
+:host>>>.ui-panelmenu .ui-panelmenu-content .ui-menuitem {
+    padding-left: 1em !important;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header:hover>a {
+    border: 0px solid transparent !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header:hover>a>span {
+    color: #ffffff !important;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header.ui-state-active>a:hover {
+    border: 0px solid transparent;
+    background-color: #ff4949;
+    color: #ffffff!important;
+}
+
+ :host>>>.ui-panelmenu .ui-submenu-list {
+    background-color: #0b0d0e;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-content {
+    padding: 0;
+    border: 0px solid #c8c8c8;
+}
+
+ :host>>>.ui-menuitem-link .ui-corner-all .ng-tns-c13-7 .ng-star-inserted .ui-state-active {
+    background-color: #ff5959!important;
+}
+
+
+/* linea y texto de item seleccionado */
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header.ui-state-active>a {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: .3em solid #03adc7;
+    background-color: transparent;
+}
+
+ :host>>>.ui-panelmenu .ui-panelmenu-header.ui-state-active>a>span {
+    color: #ffffff !important;
+}
+
+
+/* espacio de hijos */
+
+ :host>>>.ui-panelmenu .ui-panelmenu-content .ui-menuitem .ui-menuitem-link {
+    padding: 0.714em 1em;
+}
+
+:host>>>.ui-panelmenu .ui-panelmenu-content-wrapper {
+    width: 99.5%;
+}
+
+
+/* pintar al hijo seleccionado */
+
+ :host>>>li.ui-menuitem>a.ui-state-active {
+    border-left: .3em solid #03adc7;
+    background-color: #151719;
+}
+
+ :host>>>li.ui-menuitem>a.ui-state-active>span {
+    color: white!important;
+}
+
+
+/* hover al pasar por hijo */
+
+:host>>>.ui-panelmenu .ui-menuitem-link:hover {
+    background-color: transparent !important;
+}
+
+:host>>>.ui-panelmenu .ui-menuitem-link:hover>span {
+    color: white !important;
+}
+
+
+/* submenu expanded */
+
+:host>>>.pi-caret-down {
+    color: white !important;
+}
+
+:host>>>.pi-caret-down~span {
+    color: white !important;
+}
+
+:host>>>.pi-chevron-down {
+    float: right!important;
+}
+
+
+/* FIN PANEL MENU */
+
+:host>>>.ui-panelmenu .ui-submenu-list {
+    margin-left: 0em;
+}
+
+
+/* ICONO MENU*/
+
+.box {
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.3em;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    height: .2em;
+    background: #03acc6;
+    transition: all .3s;
+    position: relative;
+}
+
+span+span {
+    margin-top: .3em;
+}
+
+.active span:nth-child(1) {
+    animation: ease .7s top forwards;
+}
+
+.not-active span:nth-child(1) {
+    animation: ease .7s top-2 forwards;
+}
+
+.active span:nth-child(2) {
+    animation: ease .7s scaled forwards;
+}
+
+.not-active span:nth-child(2) {
+    animation: ease .7s scaled-2 forwards;
+}
+
+.active span:nth-child(3) {
+    animation: ease .7s bottom forwards;
+}
+
+.not-active span:nth-child(3) {
+    animation: ease .7s bottom-2 forwards;
+}
+
+@keyframes top {
+    0% {
+        top: 0;
+        transform: rotate(0);
+    }
+    50% {
+        top: 22px;
+        transform: rotate(0);
+    }
+    100% {
+        top: .5em;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes top-2 {
+    0% {
+        top: 22px;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 22px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bottom {
+    0% {
+        bottom: 22px;
+        transform: rotate(0);
+    }
+    50% {
+        bottom: 22px;
+        transform: rotate(0);
+    }
+    100% {
+        top: -.5em;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes bottom-2 {
+    0% {
+        bottom: 22px;
+        transform: rotate(135deg);
+    }
+    50% {
+        bottom: 22px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+}
+
+@keyframes scaled {
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes scaled-2 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* FIN ICONO  */

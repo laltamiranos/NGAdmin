@@ -1,0 +1,132 @@
+<div id="carta-view" class="carta-Normal">
+
+    <div class="w-100 h-100">
+
+        <div class="row w-100 h-100" *ngIf="loading">
+            <app-loading class="col-12 h-100" [texto]="texto"></app-loading>
+        </div>
+
+        <div class="row w-100 h-100" *ngIf="!dataTable && !loading">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2 col-md-1 h-100 d-vertical-left">
+                        <div (click)="openModal('add')" pTooltip="Crear nuevo Usuario." tooltipPosition="top">
+                            <img src="assets/iconos/user-plus.svg" class="img-header-tabla" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-tabla-vacia class="w-100 h-50 row" [texto]="textoVacio" style="margin-left: 1.6em;"></app-tabla-vacia>
+        </div>
+
+        <div *ngIf="dataTable && !loading">
+
+            <p-table #dt [columns]="dataTable.cols" [value]="dataTable.rows" dataKey="correo" [paginator]="true" [rows]="cantidadRows" [responsive]="true" [reorderableColumns]="true">
+
+                <ng-template pTemplate="caption">
+                    <div class="ui-helper-clearfix">
+                        <div class="row h-100">
+
+                            <div class="col-md-1 col-5">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div (click)="openModal('add')" pTooltip="Crear nuevo Usuario." tooltipPosition="top">
+                                            <img src="assets/iconos/user-plus.svg" class="img-header-tabla" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div [ngClass]="cantidadRows == 1 ? 'mr-4' : 'col-md-9'"></div>
+
+                            <div class="col-md-2 col-6 mt-1 h-100">
+                                <div>
+                                    <input (input)="dt.filterGlobal($event.target.value, 'contains')" type="text" placeholder="Buscar ..." class="input-buscar rounded-pill float-right" pTooltip="Buscar en Tabla." tooltipPosition="top" />
+                                    <a class="srn-btn">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th style="width: 3em;"></th>
+                        <th style="width: 3em;"></th>
+                        <th *ngFor="let col of columns" [ngSwitch]="col.field" class="text-left">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td>
+                            <span class="ui-column-title">Editar</span>
+                            <img class="img-in-table" src="assets/iconos/edit.svg" (click)="updateUser(rowData)" pTooltip="Actualizar Usuario." tooltipPosition="top" />
+                        </td>
+
+                        <td>
+                            <span class="ui-column-title">Eliminar</span>
+                            <img class="img-in-table" src="assets/iconos/delete.svg" pTooltip="Borrar Usuario." tooltipPosition="top" (click)="deleteUser(rowData)" />
+                        </td>
+
+                        <td *ngFor="let col of columns">
+                            <div *ngIf="col.field == 'usuario'" class="text-left text-truncate" pTooltip="{{rowData.usuario}}" tooltipPosition="left">
+                                <span class="ui-column-title">{{col.header}}</span> {{rowData.usuario}}
+                            </div>
+                            <div *ngIf="col.field=='estatus'">
+                                <span class="ui-column-title">{{col.header}}</span>
+                                <div *ngIf="rowData[col.field]">Activo</div>
+                                <div *ngIf="!rowData[col.field]">Inactivo</div>
+                            </div>
+                            <div *ngIf="col.field=='correo' || col.field=='sexo'" class="text-left text-truncate" [pTooltip]="rowData[col.field]" tooltipPosition="left">
+                                <span class="ui-column-title">{{col.header}}</span> {{rowData[col.field]}}
+                            </div>
+                            <div *ngIf="col.field == 'fechaCreacion'" style="max-width: 100%;" pTooltip="{{rowData[col.field] | date : 'dd/MM/yyyy hh:mm a'}}" tooltipPosition="left">
+                                {{rowData[col.field] | date : 'dd/MM/yyyy hh:mm a'}}
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="summary">
+                    <div class="h-100 d-vertical-left font-weight-lighter" [ngClass]="cantidadRows == 1 ? 'row':null">
+                        <div [ngSwitch]="cantidadRows">
+                            <div *ngSwitchCase="1">
+                                <label class="m-0 w-100 pr-2">Mostrando: <label class="mr-1 text-primary">{{dt?.totalRecords}}</label></label>
+                                <label class="m-0 w-100">Usuarios en Tabla de {{dataTable.rows.length}} Disponibles.</label>
+                            </div>
+                            <div *ngSwitchDefault>
+                                <label class="m-0 pr-2">Mostrando</label>
+                                <label class="m-0 pr-2 text-primary">{{dt?.totalRecords}}</label>
+                                <label class="m-0">Usuarios en Tabla de {{dataTable.rows.length}} Disponibles.</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </ng-template>
+
+            </p-table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<p-sidebar [(visible)]="modalUsuarios" position="right" [modal]="false" [style]="{ 'overflow-y': 'scroll'}">
+    <i class="fas fa-times closeModal-Usuarios" (click)="closeModal()"></i>
+    <span [ngSwitch]="accion">
+        <div *ngSwitchCase="'add'">
+            <app-add-user></app-add-user>
+        </div>
+        <div *ngSwitchCase="'update'">
+            <app-update-user [_user]="selectedUser"></app-update-user>
+        </div>
+        <p *ngSwitchDefault></p>
+    </span>
+</p-sidebar>
