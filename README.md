@@ -2,7 +2,6 @@
 Front-end de aplicación admin de usuarios
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
->>>>>>> 502df6c291836a6c64e286dfea2df81ec6f2cf2f
 
 ## Development server
 
